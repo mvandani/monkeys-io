@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+{% load socketio_tags %}
+{% socketio %}
+</head>
+<body>
+<iframe width="420" height="315" src="//www.youtube.com/embed/no_elVGGgW8" frameborder="0" allowfullscreen></iframe>
+</body>
+<script>
+    var socket = new io.Socket();
+    socket.on('connect', function() {
+    	socket.subscribe('my channel');
+	});
+    socket.connect();
+</script>
+</html>
